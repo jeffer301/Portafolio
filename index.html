@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jefferson Manuel Valencia Riascos - Técnico en Sistemas SENA - Estudiante de Ingeniería en Sistemas">
+    <title>Jefferson Manuel Valencia Riascos</title>
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Person",
+      "name": "Jefferson Manuel Valencia Riascos",
+      "email": "je.301@hotmail.com",
+      "telephone": "+57-313-732-1014",
+      "jobTitle": "Técnico en Sistemas - Estudiante de Ingeniería en Sistemas",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Buenaventura",
+        "addressCountry": "CO"
+      },
+      "education": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Técnico en Sistemas",
+          "educationalLevel": "SENA"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Ingeniería en Sistemas",
+          "educationalLevel": "Universidad Nacional de Colombia"
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,50 Q300,0 600,50 T1200,50 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.05)"/></svg>') no-repeat bottom;
+            background-size: cover;
+            pointer-events: none;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: lowercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.95;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .header .badges {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .badge-header {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-weight: 500;
+        }
+
+        /* Main Container */
+        .container-main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Grid Layout */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Left Column */
+        .left-column {
+            order: 1;
+        }
+
+        /* Right Column */
+        .right-column {
+            order: 2;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            border-bottom: 3px solid #dc2626;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            height: 3px;
+            width: 60px;
+            background: #991b1b;
+            border-radius: 2px;
+        }
+
+        /* Profile Image */
+        .profile-image-container {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #dc2626;
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+            margin: 0 auto;
+            display: block;
+        }
+
+        .no-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #991b1b;
+            border: 5px solid #dc2626;
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+        }
+
+        /* About */
+        .about-text {
+            color: #4b5563;
+            line-height: 1.8;
+            font-size: 0.98rem;
+            margin-bottom: 20px;
+        }
+
+        .about-info {
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.05) 0%, rgba(153, 27, 27, 0.05) 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #dc2626;
+        }
+
+        .about-info p {
+            margin: 12px 0;
+            color: #374151;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about-info p i {
+            color: #dc2626;
+            width: 20px;
+        }
+
+        .about-info strong {
+            color: #991b1b;
+            font-weight: 600;
+        }
+
+        .about-info a {
+            color: #dc2626;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .about-info a:hover {
+            color: #991b1b;
+            text-decoration: underline;
+        }
+
+        /* Skills */
+        .skill-item {
+            margin-bottom: 25px;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 8px;
+            font-size: 0.98rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-name i {
+            color: #dc2626;
+        }
+
+        .skill-bar {
+            background: #e5e7eb;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-progress {
+            background: linear-gradient(90deg, #dc2626 0%, #991b1b 100%);
+            height: 100%;
+            border-radius: 5px;
+            transition: width 0.5s ease;
+            box-shadow: 0 2px 5px rgba(220, 38, 38, 0.3);
+        }
+
+        /* Right Box */
+        .side-box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #dc2626;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .side-box:hover {
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .side-box-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            border-bottom: 2px solid #fecaca;
+            padding-bottom: 10px;
+        }
+
+        .side-box-content {
+            color: #4b5563;
+            line-height: 1.7;
+            font-size: 0.93rem;
+        }
+
+        .side-box-content p {
+            margin: 10px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .side-box-content p i {
+            color: #dc2626;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .side-box-content strong {
+            color: #991b1b;
+            font-weight: 700;
+        }
+
+        .side-box-content .date {
+            color: #9ca3af;
+            font-size: 0.85rem;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #f3f4f6;
+        }
+
+        .side-box-content .institution {
+            color: #dc2626;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Contact Buttons */
+        .contact-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn-contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-contact i {
+            font-size: 1.1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .left-column {
+                order: 1;
+            }
+
+            .right-column {
+                order: 2;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header {
+                padding: 60px 20px;
+            }
+
+            .header .badges {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+            }
+
+            .btn-contact {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .side-box {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-content">
+            <h1 itemprop="name">jefferson manuel valencia riascos</h1>
+            <p class="subtitle">Desarrollador Web</p>
+            <div class="badges">
+                <span class="badge-header">
+                    <i class="fas fa-certificate"></i> Técnico en Sistemas - SENA
+                </span>
+                <span class="badge-header">
+                    <i class="fas fa-graduation-cap"></i> Ingeniero en Sistemas (Cursando)
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container-main">
+        <div class="grid-layout">
+            
+            <!-- LEFT COLUMN -->
+            <div class="left-column">
+                
+                <!-- ABOUT -->
+                <section class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-user" style="color: #dc2626; margin-right: 10px;"></i>Sobre mí
+                    </h2>
+                    
+                    <!-- LINEA 398: IMAGEN DE PERFIL - CAMBIAR LA URL -->
+                    <div class="profile-image-container">
+                        <img src="foto.jpg" alt="Foto de perfil de Jefferson Manuel Valencia Riascos" class="profile-image" itemprop="image">
+                        <!-- Si no tienes imagen, descomenta la línea de abajo y comenta la de arriba -->
+                        <!-- <div class="no-image"><i class="fas fa-user"></i></div> -->
+                    </div>
+                    
+                    <p class="about-text">
+                        Técnico en Sistemas certificado por el SENA con experiencia en desarrollo web. 
+                        Actualmente estudiante de Ingeniería en Sistemas apasionado por la programación web. 
+                        Trabajo con HTML, CSS y JavaScript para crear soluciones funcionales y modernas. 
+                        Me enfoco en aprender constantemente nuevas tecnologías y mejorar mis habilidades.
+                    </p>
+                    <div class="about-info">
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <a itemprop="email" href="mailto:je.301@hotmail.com">je.301@hotmail.com</a>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone"></i>
+                            <a itemprop="telephone" href="tel:+573137321014">313 732 1014</a>
+                        </p>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span><strong>Buenaventura, Colombia</strong></span>
+                        </p>
+                    </div>
+                    <div class="contact-buttons">
+                        <a href="https://www.linkedin.com/in/jefferson-valencia" target="_blank" class="btn-contact">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/jefferson-valencia" target="_blank" class="btn-contact">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </section>
+
+                <!-- HABILIDADES -->
+                <section class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-code" style="color: #dc2626; margin-right: 10px;"></i>Habilidades
+                    </h2>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <i class="fab fa-html5"></i> HTML5
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <i class="fab fa-css3-alt"></i> CSS3
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <i class="fab fa-js-square"></i> JavaScript
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <i class="fab fa-python"></i> Python
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <i class="fab fa-bootstrap"></i> Bootstrap
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 82%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <i class="fas fa-code-branch"></i> Git
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 78%"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="right-column">
+                
+                <!-- FORMACIÓN SENA -->
+                <div class="side-box">
+                    <div class="side-box-title">
+                        <i class="fas fa-certificate"></i> Técnico SENA
+                    </div>
+                    <div class="side-box-content">
+                        <p>
+                            <i class="fas fa-check-circle"></i>
+                            <strong>Técnico en Sistemas</strong>
+                        </p>
+                        <p class="institution">SENA - Servicio Nacional de Aprendizaje</p>
+                        <p>Especialización en configuración y mantenimiento de sistemas, redes y seguridad informática.</p>
+                        <p class="date">                           
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FORMACIÓN UNIVERSIDAD -->
+                <div class="side-box">
+                    <div class="side-box-title">
+                        <i class="fas fa-graduation-cap"></i> Formación Universitaria
+                    </div>
+                    <div class="side-box-content">
+                        <p>
+                            <i class="fas fa-check-circle"></i>
+                            <strong>Ingeniería en Sistemas</strong>
+                        </p>
+                        <p class="institution">Universidad Nacional de Colombia</p>
+                        <p class="date">
+                            <i class="fas fa-calendar-alt"></i>
+                            Cursando 
+                        </p>
+                    </div>
+                </div>
+
+                <!-- EXPERIENCIA -->
+                <div class="side-box">
+                    <div class="side-box-title">
+                        <i class="fas fa-briefcase"></i> Experiencia
+                    </div>
+                    <div class="side-box-content">
+                        <p>
+                            <i class="fas fa-check-circle"></i>
+                            <strong>Proyectos Académicos</strong>
+                        </p>
+                        <p>Desarrollo de páginas web con HTML, CSS y JavaScript para proyectos escolares y del SENA.</p>
+                        <p class="date">
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <!-- TECNOLOGÍAS -->
+                <div class="side-box">
+                    <div class="side-box-title">
+                        <i class="fas fa-tools"></i> Tecnologías
+                    </div>
+                    <div class="side-box-content">
+                        <p><i class="fas fa-check"></i> HTML5</p>
+                        <p><i class="fas fa-check"></i> CSS3</p>
+                        <p><i class="fas fa-check"></i> JavaScript</p>
+                        <p><i class="fas fa-check"></i> Python</p>
+                        <p><i class="fas fa-check"></i> Bootstrap</p>
+                        <p><i class="fas fa-check"></i> Tailwind CSS</p>
+                        <p><i class="fas fa-check"></i> Git/GitHub</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
