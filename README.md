@@ -1,11 +1,11 @@
 # Portafolio de Jefferson Manuel Valencia Riascos
 
 ## Tecnologías Utilizadas:
-- **HTML5** - Estructura semántica
-- **Bootstrap 5** - Framework CSS responsivo
-- **Tailwind CSS** - Utilidades de CSS
-- **Font Awesome** - Iconos
-- **Schema.org** - Datos estructurados para SEO
+- **HTML5**
+- **Bootstrap 5**
+- **Tailwind CSS** 
+- **Font Awesome**
+- **Schema.org** 
 
 ## Características:
 ✅ Diseño responsivo (mobile-first)
