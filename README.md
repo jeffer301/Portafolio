@@ -2,7 +2,6 @@
 
 ## Tecnologías Utilizadas:
 - **HTML5** - Estructura semántica
-- **CSS3** - Estilos personalizados
 - **Bootstrap 5** - Framework CSS responsivo
 - **Tailwind CSS** - Utilidades de CSS
 - **Font Awesome** - Iconos
